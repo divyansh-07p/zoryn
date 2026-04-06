@@ -60,19 +60,19 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
         if (onSectionChange) {
           onSectionChange(name);
         }
-        // Close sidebar on mobile after selection
+        // Close sidebar on mobile after selecting a menu item
         if (window.innerWidth < 1024) {
           setIsOpen(false);
         }
       }}
-      className={`w-full flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-300 text-xs sm:text-sm ${
+      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
         (propActiveSection === name || activeItem === name)
           ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/30 shadow-lg shadow-blue-500/10'
           : 'hover:bg-white/5 text-gray-300'
       }`}
     >
-      <Icon size={18} className={(propActiveSection === name || activeItem === name) ? color : 'text-gray-400'} />
-      <span className={`font-medium truncate ${(propActiveSection === name || activeItem === name) ? 'text-white' : ''}`}>
+      <Icon size={20} className={(propActiveSection === name || activeItem === name) ? color : 'text-gray-400'} />
+      <span className={`text-sm font-medium ${(propActiveSection === name || activeItem === name) ? 'text-white' : ''}`}>
         {name}
       </span>
     </button>
@@ -83,34 +83,38 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-16 left-3 sm:left-4 z-40 lg:hidden bg-blue-500/20 border border-blue-400/30 p-2 rounded-lg hover:bg-blue-500/30 transition-all"
+        className="fixed top-16 left-4 z-50 lg:hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/40 p-2.5 rounded-lg hover:bg-blue-500/30 hover:border-blue-400/60 transition-all duration-300 shadow-lg hover:shadow-xl"
+        title={isOpen ? 'Close sidebar' : 'Open sidebar'}
+        aria-label={isOpen ? 'Close sidebar' : 'Open sidebar'}
+        aria-expanded={isOpen}
       >
-        {isOpen ? <X size={20} /> : <Menu size={20} />}
+        {isOpen ? <X size={22} className="text-white" /> : <Menu size={22} className="text-white" />}
       </button>
 
       {/* Overlay for mobile */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden backdrop-blur-sm transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
+          role="presentation"
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-16 glass-dark border-r border-blue-500/10 flex flex-col z-40 transition-all duration-300 w-56 sm:w-64 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 lg:w-64 lg:sticky lg:top-16 overflow-hidden`}
+        className={`fixed left-0 top-16 glass-dark border-r border-blue-500/10 flex flex-col z-40 transition-all duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
+        } lg:translate-x-0 lg:w-64 lg:sticky lg:top-16 overflow-hidden w-64`}
         style={{ height: 'calc(100vh - 64px)' }}
       >
 
         {/* Role Selector - Fixed */}
-        <div className="px-3 sm:px-4 py-3 sm:py-4 mt-2 sm:mt-4 flex-shrink-0">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-2 sm:mb-3">Role:</p>
+        <div className="px-4 py-4 mt-4 flex-shrink-0">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-3">Role:</p>
           <select
             value={role}
             onChange={(e) => setRole(e.target.value as 'viewer' | 'admin')}
-            className="w-full px-2 sm:px-3 py-2 sm:py-2.5 bg-dark-700/60 border border-blue-400/30 rounded-lg text-xs sm:text-sm text-gray-300 focus:outline-none focus:border-blue-400/60 focus:bg-dark-700 focus:text-white transition-all hover:border-blue-400/50 hover:bg-dark-700/80 appearance-none cursor-pointer"
+            className="w-full px-3 py-2.5 bg-dark-700/60 border border-blue-400/30 rounded-lg text-sm text-gray-300 focus:outline-none focus:border-blue-400/60 focus:bg-dark-700 focus:text-white transition-all hover:border-blue-400/50 hover:bg-dark-700/80 appearance-none cursor-pointer"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
               backgroundRepeat: 'no-repeat',
@@ -125,8 +129,8 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
         </div>
 
         {/* Main Navigation - Scrollable */}
-        <nav className="px-3 sm:px-4 py-4 sm:py-6 space-y-1 sm:space-y-2 flex-1 overflow-y-auto">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-3 sm:mb-4">
+        <nav className="px-4 py-6 space-y-2 flex-1 overflow-y-auto">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-4">
             Menu
           </p>
           {menuItems.map((item) => (
@@ -134,10 +138,10 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
           ))}
 
           {/* Divider */}
-          <div className="my-3 sm:my-4 border-t border-blue-500/10" />
+          <div className="my-4 border-t border-blue-500/10" />
 
           {/* Secondary Items */}
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-3 sm:mb-4">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide px-2 mb-4">
             Tools
           </p>
           {secondaryItems.map((item) => (
@@ -146,15 +150,23 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
         </nav>
 
         {/* Bottom Section - Fixed */}
-        <div className="px-3 sm:px-4 py-2 sm:py-3 border-t border-blue-500/10 space-y-1 sm:space-y-2 flex-shrink-0">
+        <div className="px-4 py-3 border-t border-blue-500/10 space-y-2 flex-shrink-0">
           {bottomItems.map((item) => (
             <NavItem key={item.name} {...item} />
           ))}
           
           {/* Logout Button */}
-          <button className="w-full flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-red-400 hover:bg-red-500/10 transition-all duration-300 border border-transparent hover:border-red-400/30">
+          <button 
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-500/10 transition-all duration-300 border border-transparent hover:border-red-400/30"
+            onClick={() => {
+              // Close sidebar on mobile after logout
+              if (window.innerWidth < 1024) {
+                setIsOpen(false);
+              }
+            }}
+          >
             <LogOut size={20} />
-            <span className="text-xs sm:text-sm font-medium">Logout</span>
+            <span className="text-sm font-medium">Logout</span>
           </button>
         </div>
       </aside>

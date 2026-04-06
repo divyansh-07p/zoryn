@@ -84,27 +84,27 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 pt-12 sm:pt-16 md:pt-24 pb-3 sm:pb-4 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-4 relative z-10">
         {/* Top Section - Logo, Description & Navigation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-6 md:gap-8 lg:gap-10 lg:gap-12 mb-8 lg:mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-10 mb-10">
           {/* Branding Section */}
           <div>
-            <div className="flex items-center gap-2 mb-3 sm:mb-4">
+            <div className="flex items-center gap-2 mb-4">
               <img 
                 src="/zorvyn-logo.png" 
                 alt="Zorvyn" 
-                className="h-7 sm:h-8 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Building secure,compliant, and intelligent financial systems that scale with you. Trusted by 600+ companies worldwide.
+              Building secure, compliant, and intelligent financial systems that scale with you. Trusted by 600+ companies worldwide.
             </p>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-3 sm:mb-4">Products</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Products</h3>
+            <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Zorvyn Ledger</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Zorvyn Comply</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Zorvyn Insight</a></li>
@@ -114,8 +114,8 @@ export const Footer: React.FC = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-3 sm:mb-4">Solutions</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Solutions</h3>
+            <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">For Startups</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">For SMEs</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">For Enterprises</a></li>
@@ -124,8 +124,8 @@ export const Footer: React.FC = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-3 sm:mb-4">Resources</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Resources</h3>
+            <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Features</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Security</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">FAQ</a></li>
@@ -134,8 +134,8 @@ export const Footer: React.FC = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-3 sm:mb-4">Company</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
+            <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">Company</h3>
+            <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">About Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Contact Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Careers</a></li>
@@ -144,22 +144,22 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Middle Section - Subscribe & Contact */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 py-4 sm:py-6 border-t border-blue-500/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-6 border-t border-blue-500/10">
           {/* Newsletter */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <span className="text-gray-400 text-xs sm:text-sm whitespace-nowrap font-medium">Subscribe to Updates</span>
-            <form onSubmit={handleSubscribe} className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex items-center gap-4">
+            <span className="text-gray-400 text-sm whitespace-nowrap font-medium">Subscribe to Updates</span>
+            <form onSubmit={handleSubscribe} className="flex items-center gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your work email"
-                className="flex-1 sm:flex-none px-3 sm:px-4 py-2 sm:py-2.5 bg-dark-700/50 border border-dark-600/30 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all min-w-0"
+                className="px-4 py-2.5 bg-dark-700/50 border border-dark-600/30 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 transition-all"
                 required
               />
               <button
                 type="submit"
-                className="p-2 sm:p-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300 flex-shrink-0"
+                className="p-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300"
                 title="Subscribe"
               >
                 <Mail size={18} />
@@ -168,14 +168,13 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-8">
             <a 
               href="mailto:contact@zorvyn.io" 
-              className="text-gray-400 hover:text-blue-400 transition-colors text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 truncate"
+              className="text-gray-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-2"
             >
-              <Mail size={16} className="flex-shrink-0" />
-              <span className="hidden sm:inline">contact@zorvyn.io</span>
-              <span className="sm:hidden">Contact</span>
+              <Mail size={16} />
+              contact@zorvyn.io
             </a>
             <a 
               href="https://linkedin.com/company/zorvyn" 
@@ -190,14 +189,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section - Copyright & Links */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-blue-500/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-blue-500/10">
           <p className="text-xs text-gray-500">
             © 2026 Zorvyn FinTech Pvt. Ltd. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-6 sm:gap-8">
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-xs sm:text-sm">Terms</a>
-            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-xs sm:text-sm">Privacy</a>
+          <div className="flex items-center gap-8">
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Terms</a>
+            <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Privacy</a>
             <button 
               onClick={scrollToTop}
               className="text-gray-400 hover:text-blue-400 transition-colors p-1"
