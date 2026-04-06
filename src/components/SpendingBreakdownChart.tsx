@@ -73,7 +73,7 @@ export const SpendingBreakdownChart: React.FC<SpendingBreakdownChartProps> = ({
   };
 
   const CustomShape = (props: any) => {
-    const { cx, cy, midAngle, innerRadius, outerRadius, percent, payload, index } = props;
+    const { cx, cy, midAngle, innerRadius, outerRadius, percent, index } = props;
     
     if (percent === 0) return null;
 
@@ -163,7 +163,7 @@ export const SpendingBreakdownChart: React.FC<SpendingBreakdownChartProps> = ({
                     onMouseEnter={(_, index) => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
-                    {chartData.map((entry, index) => (
+                    {chartData.map((_entry, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={`url(#${getGradientId(index)})`}

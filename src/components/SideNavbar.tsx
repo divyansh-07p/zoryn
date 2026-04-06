@@ -5,7 +5,6 @@ import {
   X,
   Home,
   TrendingUp,
-  Wallet,
   Settings,
   HelpCircle,
   LogOut,

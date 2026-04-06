@@ -3,7 +3,7 @@ import { Mail, Linkedin, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = React.useState('');
-  const [subscribed, setSubscribed] = React.useState(false);
+  const [_subscribed, setSubscribed] = React.useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
