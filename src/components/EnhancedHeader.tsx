@@ -12,19 +12,19 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
 
   return (
     <header className="glass-dark sticky top-0 z-50 backdrop-blur-xl border-b border-blue-500/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2.5 sm:py-3">
+        <div className="flex items-center justify-between gap-3 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2 flex-shrink-0">
             <img 
               src="/zorvyn-logo.png" 
               alt="Zorvyn Logo" 
-              className="h-10 w-auto"
+              className="h-8 sm:h-9 w-auto"
             />
           </div>
 
           {/* Desktop Menu - Centered */}
-          <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center gap-6 lg:gap-8 flex-1 justify-center">
             <a href="#" className="text-white hover:text-blue-400 transition-colors text-sm font-medium">Home</a>
             
             {/* Solutions Dropdown */}
@@ -59,7 +59,7 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
 
           {/* Contact Sales Button - Right aligned */}
           <div className="hidden lg:flex items-center flex-shrink-0">
-            <button className="px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 flex items-center gap-2">
+            <button className="px-4 lg:px-6 py-2 lg:py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 flex items-center gap-2 text-sm lg:text-base">
               Contact Sales
               <span>→</span>
             </button>
@@ -68,7 +68,7 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden p-2 hover:bg-dark-700/50 rounded-lg transition-colors"
+            className="lg:hidden p-2 hover:bg-dark-700/50 rounded-lg transition-colors flex-shrink-0"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -76,7 +76,7 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="lg:hidden mt-4 pt-4 border-t border-dark-700 space-y-3 animate-slide-in-up pb-4">
+          <div className="lg:hidden mt-3 pt-3 border-t border-dark-700 space-y-2 animate-slide-in-up pb-3">
             <a href="#" className="block px-3 py-2 text-gray-300 hover:text-white transition-colors text-sm">Home</a>
             
             {/* Mobile Solutions */}
@@ -89,10 +89,10 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
                 <ChevronDown size={16} className={`transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
               </button>
               {solutionsOpen && (
-                <div className="ml-4 space-y-2 mt-2">
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">For Startups</a>
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">For SMEs</a>
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">For Enterprises</a>
+                <div className="ml-4 space-y-1 mt-1">
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">For Startups</a>
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">For SMEs</a>
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">For Enterprises</a>
                 </div>
               )}
             </div>
@@ -110,13 +110,19 @@ export const EnhancedHeader: React.FC<EnhancedHeaderProps> = () => {
                 <ChevronDown size={16} className={`transition-transform ${companyOpen ? 'rotate-180' : ''}`} />
               </button>
               {companyOpen && (
-                <div className="ml-4 space-y-2 mt-2">
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">About Us</a>
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">Contact Us</a>
-                  <a href="#" className="block px-3 py-2 text-gray-400 hover:text-blue-400 text-sm">Careers</a>
+                <div className="ml-4 space-y-1 mt-1">
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">About Us</a>
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">Contact Us</a>
+                  <a href="#" className="block px-3 py-1.5 text-gray-400 hover:text-blue-400 text-sm">Careers</a>
                 </div>
               )}
             </div>
+
+            {/* Mobile Contact Sales Button */}
+            <button className="w-full px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 text-sm mt-2">
+              Contact Sales
+              <span>→</span>
+            </button>
 
             <button className="w-full px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 mt-4">
               Contact Sales

@@ -59,7 +59,7 @@ export const AnimatedSummaryCard: React.FC<AnimatedSummaryCardProps> = ({
 
   return (
     <div
-      className={`glass-dark rounded-2xl p-6 hover-lift group overflow-hidden animate-fade-in`}
+      className={`glass-dark rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 hover-lift group overflow-hidden animate-fade-in`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Gradient Background */}
@@ -67,12 +67,12 @@ export const AnimatedSummaryCard: React.FC<AnimatedSummaryCardProps> = ({
 
       <div className="relative z-10">
         {/* Header */}
-        <div className="flex justify-between items-start mb-4">
-          <div className={`${color} p-3 rounded-xl backdrop-blur-sm`}>
+        <div className="flex justify-between items-start mb-3 sm:mb-4">
+          <div className={`${color} p-2 sm:p-3 rounded-lg sm:rounded-xl backdrop-blur-sm`}>
             {icon}
           </div>
           {trend !== undefined && (
-            <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-sm font-semibold ${
+            <div className={`flex items-center gap-1 px-2 py-1 rounded-lg text-xs sm:text-sm font-semibold ${
               isTrendPositive
                 ? 'bg-green-500/20 text-green-300'
                 : 'bg-red-500/20 text-red-300'
@@ -84,17 +84,17 @@ export const AnimatedSummaryCard: React.FC<AnimatedSummaryCardProps> = ({
         </div>
 
         {/* Title */}
-        <p className="text-gray-400 text-sm font-medium mb-2">{title}</p>
+        <p className="text-gray-400 text-xs sm:text-sm font-medium mb-1 sm:mb-2">{title}</p>
 
         {/* Value */}
         <div className="flex items-baseline gap-1">
-          <p className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent line-clamp-1">
             {prefix}{formatValue(displayValue)}{suffix}
           </p>
         </div>
 
         {/* Bottom Text */}
-        <p className="text-gray-500 text-xs mt-3">Updated just now</p>
+        <p className="text-gray-500 text-xs mt-2 sm:mt-3">Updated just now</p>
       </div>
 
       {/* Animated Border */}
