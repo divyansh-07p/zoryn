@@ -1,9 +1,4 @@
 
-
-```
-Here's the complete README.md code to copy and paste into your `README.md` file:
-
-```markdown
 # Zorvyn Finance Dashboard
 
 ## 🎯 Project Overview
