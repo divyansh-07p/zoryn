@@ -129,7 +129,7 @@ The application will be available at `http://localhost:5173`
 
 ```
 src/
-├── components/              # Reusable UI components
+├── components/                      # Reusable UI components
 │   ├── AnimatedSummaryCard.tsx      # Animated financial metric cards
 │   ├── BalanceTrendChartV2.tsx      # Monthly balance trend area chart
 │   ├── SpendingBreakdownChart.tsx   # Category spending donut chart
@@ -139,15 +139,15 @@ src/
 │   ├── EnhancedHeader.tsx           # Marketing-style navigation header
 │   ├── SideNavbar.tsx               # Sidebar navigation with role selector
 │   └── Footer.tsx                   # Footer with company links
-├── context/                 # State management
+├── context/                         # State management
 │   └── DashboardContext.tsx         # Global financial data context
-├── data/                    # Mock/dummy data
+├── data/                            # Mock/dummy data
 │   └── mockData.ts                  # Sample financial data
-├── types/                   # TypeScript type definitions
+├── types/                           # TypeScript type definitions
 │   └── index.ts                     # Shared type interfaces
-├── App.tsx                  # Main app router
-├── Dashboard.tsx            # Main dashboard orchestrator
-└── index.css               # Global styles and animations
+├── App.tsx                          # Main app router
+├── Dashboard.tsx                    # Main dashboard orchestrator
+└── index.css                        # Global styles and animations
 ```
 
 ### State Management Pattern
