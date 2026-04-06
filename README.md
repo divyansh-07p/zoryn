@@ -1,7 +1,4 @@
-# Code Citations
 
-## License: unknown
-https://github.com/TheCodeGlow/projectClinique/blob/e5b79a28c51f91087be08d3e1c4f69d9452fab81/client/src/pages/styles/Dashboard.css
 
 ```
 Here's the complete README.md code to copy and paste into your `README.md` file:
