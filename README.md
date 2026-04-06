@@ -697,25 +697,6 @@ For questions about the codebase, architecture, or potential opportunities:
 
 ---
 
-## 📞 Support & Contribution
-
-### Getting Help
-1. Check README documentation (you're here!)
-2. Review inline code comments in components
-3. Explore the API Integration Guide for backend connectivity
-4. Check TypeScript error messages for guidance
-
-### Contributing
-This is a demonstration project showcasing development capabilities. For version updates or improved features, check the GitHub repository.
-
-### Bug Reports
-If you find issues, please:
-1. Verify you're using Node.js 18+
-2. Check that all dependencies are installed (`npm install`)
-3. Clear cache and rebuild (`npm run build`)
-4. Check browser console for specific error messages
-
----
 
 
 ## 👨‍💻 About This Project
@@ -731,10 +712,3 @@ This Zorvyn Finance Dashboard demonstrates:
 Built to showcase what's possible when frontend excellence meets real-world requirements.
 
 **Happy exploring! 🚀**
-
----
-
-*Last Updated: April 6, 2026*
-*Project Status: Production Ready ✅*
-*Bundle Size: ~150KB gzipped*
-*Lighthouse Score: 90+*
