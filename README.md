@@ -662,12 +662,6 @@ Delays: 0ms, 100ms, 200ms, 300ms (staggered animations)
 4. **Connect Real API**: Follow the API Integration Guide to use actual data
 5. **Deploy**: Use deployment guide to host your own instance
 
-### Contact & Questions
-
-For questions about the codebase, architecture, or potential opportunities:
-- GitHub: [divyansh-07p/zoryn](https://github.com/divyansh-07p/zoryn)
-- Code is open source and ready for review
-
 ---
 
 ## 📚 Future Roadmap
