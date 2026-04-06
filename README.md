@@ -129,7 +129,7 @@ The application will be available at `http://localhost:5173`
 
 ```
 src/
-├── components/              # Reusable UI components
+├── components/                      # Reusable UI components
 │   ├── AnimatedSummaryCard.tsx      # Animated financial metric cards
 │   ├── BalanceTrendChartV2.tsx      # Monthly balance trend area chart
 │   ├── SpendingBreakdownChart.tsx   # Category spending donut chart
@@ -139,15 +139,15 @@ src/
 │   ├── EnhancedHeader.tsx           # Marketing-style navigation header
 │   ├── SideNavbar.tsx               # Sidebar navigation with role selector
 │   └── Footer.tsx                   # Footer with company links
-├── context/                 # State management
+├── context/                         # State management
 │   └── DashboardContext.tsx         # Global financial data context
-├── data/                    # Mock/dummy data
+├── data/                            # Mock/dummy data
 │   └── mockData.ts                  # Sample financial data
-├── types/                   # TypeScript type definitions
+├── types/                           # TypeScript type definitions
 │   └── index.ts                     # Shared type interfaces
-├── App.tsx                  # Main app router
-├── Dashboard.tsx            # Main dashboard orchestrator
-└── index.css               # Global styles and animations
+├── App.tsx                          # Main app router
+├── Dashboard.tsx                    # Main dashboard orchestrator
+└── index.css                        # Global styles and animations
 ```
 
 ### State Management Pattern
@@ -340,14 +340,14 @@ export const getFallbackData = () => mockData;
 Your backend should provide these endpoints (or similar):
 
 ```
-GET  /api/balance           → { amount: number }
-GET  /api/income            → { amount: number }
-GET  /api/expenses          → { amount: number }
-GET  /api/transactions      → Transaction[]
-GET  /api/portfolio         → PortfolioItem[]
-GET  /api/monthly-data      → MonthlyData[]
-GET  /api/spending-categories → CategorySpending[]
-POST /api/transactions      → { success: boolean, transaction: Transaction }
+GET  /api/balance               → { amount: number }
+GET  /api/income                → { amount: number }
+GET  /api/expenses              → { amount: number }
+GET  /api/transactions          → Transaction[]
+GET  /api/portfolio             → PortfolioItem[]
+GET  /api/monthly-data          → MonthlyData[]
+GET  /api/spending-categories   → CategorySpending[]
+POST /api/transactions          → { success: boolean, transaction: Transaction }
 ```
 
 #### Step 4: Expected Data Formats
@@ -598,146 +598,6 @@ Delays: 0ms, 100ms, 200ms, 300ms (staggered animations)
 
 ---
 
-## 🚀 Deployment Guide
-
-### Prerequisites
-- Git repository set up and committed
-- GitHub account and repository created
-- Node.js 18+ installed
-
-### Deploy to Vercel (Recommended for React)
-
-```bash
-# 1. Install Vercel CLI
-npm install -g vercel
-
-# 2. Login to Vercel
-vercel login
-
-# 3. Deploy from project directory
-vercel
-
-# 4. Your app will be live at: https://your-project-name.vercel.app
-```
-
-Vercel automatically:
-- Detects Vite+React project
-- Runs `npm install` and `npm run build`
-- Deploys build artifacts to CDN
-- Sets up automatic deployments on git push
-
-### Deploy to Netlify
-
-```bash
-# 1. Install Netlify CLI
-npm install -g netlify-cli
-
-# 2. Login to Netlify
-netlify login
-
-# 3. Deploy
-netlify deploy --prod
-
-# 4. Your app will be live at: https://your-site.netlify.app
-```
-
-### Deploy to AWS (Self-Hosted)
-
-```bash
-# Build production bundle
-npm run build
-
-# This creates 'dist/' folder with optimized build
-
-# Upload dist/ folder to:
-# - S3 bucket (with static website hosting enabled)
-# - CloudFront distribution (for CDN caching)
-# - EC2 with nginx server
-```
-
-### Deploy to GitHub Pages
-
-```bash
-# Update vite.config.ts
-export default {
-  base: '/zoryn/',
-  // ... rest of config
-}
-
-# Build and deploy
-npm run build
-git add dist/
-git commit -m "Deploy to GitHub Pages"
-git push origin main
-
-# Enable GitHub Pages:
-# Settings → Pages → Deploy from branch → main /root
-```
-
-### Environment Variables
-
-Create `.env.production` for production API endpoints:
-
-```env
-VITE_API_BASE_URL=https://api.yourcompany.com
-VITE_API_KEY=your-api-key-here
-VITE_ENV=production
-```
-
-Create `.env.development` for local development:
-
-```env
-VITE_API_BASE_URL=http://localhost:3000
-VITE_API_KEY=dev-key
-VITE_ENV=development
-```
-
-Access in code:
-```typescript
-const apiUrl = import.meta.env.VITE_API_BASE_URL;
-const apiKey = import.meta.env.VITE_API_KEY;
-```
-
----
-
-## 📝 Development Workflow
-
-### Local Development
-
-```bash
-# Start development server with hot reload
-npm run dev
-
-# Open http://localhost:5173 in browser
-# Changes automatically refresh in browser
-```
-
-### Building for Production
-
-```bash
-# Create optimized production build
-npm run build
-
-# Output: dist/ folder with minified files
-# Analyze build size
-npm run build -- --analysis
-```
-
-### Code Quality
-
-```bash
-# Lint code for style issues
-npm run lint
-
-# Fix linting issues automatically
-npm run lint -- --fix
-
-# Type check TypeScript
-npx tsc --noEmit
-```
-
----
-
 ## 🎯 For Recruiters
 
 ### Why This Project Stands Out
@@ -786,13 +646,13 @@ npx tsc --noEmit
 
 ### Key Differentiators
 
-✅ **Not a Boilerplate**: Original project built from scratch showcasing problem-solving
-✅ **Production Ready**: No technical debt, follows React best practices
-✅ **Easy to Integrate**: Mock data makes it risk-free to explore
-✅ **Well Documented**: Clear instructions for any developer to modify/extend
-✅ **Performance Optimized**: Actual metrics > 90 Lighthouse score
-✅ **Modern Tech Stack**: React 18, TypeScript, Tailwind CSS 3
-✅ **Responsive Design**: Mobile-first approach working on all devices
+- ✅ **Not a Boilerplate**: Original project built from scratch showcasing problem-solving
+- ✅ **Production Ready**: No technical debt, follows React best practices
+- ✅ **Easy to Integrate**: Mock data makes it risk-free to explore
+- ✅ **Well Documented**: Clear instructions for any developer to modify/extend
+- ✅ **Performance Optimized**: Actual metrics > 90 Lighthouse score
+- ✅ **Modern Tech Stack**: React 18, TypeScript, Tailwind CSS 3
+- ✅ **Responsive Design**: Mobile-first approach working on all devices
 
 ### Next Steps
 
@@ -807,21 +667,6 @@ npx tsc --noEmit
 For questions about the codebase, architecture, or potential opportunities:
 - GitHub: [divyansh-07p/zoryn](https://github.com/divyansh-07p/zoryn)
 - Code is open source and ready for review
-
----
-
-## 🔄 Version History
-
-### Version 1.0.0 (Current)
-- ✅ Initial production release
-- ✅ Complete dashboard implementation
-- ✅ Portfolio management system
-- ✅ Transaction history and analytics
-- ✅ Role-based access control
-- ✅ Responsive design across all devices
-- ✅ Performance optimized (90+ Lighthouse)
-- ✅ Production-ready code base
-- ✅ Comprehensive documentation
 
 ---
 
@@ -872,11 +717,6 @@ If you find issues, please:
 
 ---
 
-## 📄 License
-
-MIT License - Open source and free to use for any purpose
-
----
 
 ## 👨‍💻 About This Project
 
