@@ -83,7 +83,7 @@ export const SideNavbar: React.FC<SideNavbarProps> = ({
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-16 left-4 z-50 lg:hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/40 p-2.5 rounded-lg hover:bg-blue-500/30 hover:border-blue-400/60 transition-all duration-300 shadow-lg hover:shadow-xl"
+        className="fixed top-20 left-5 z-50 lg:hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-400/40 p-2.5 rounded-lg hover:bg-blue-500/30 hover:border-blue-400/60 transition-all duration-300 shadow-lg hover:shadow-xl"
         title={isOpen ? 'Close sidebar' : 'Open sidebar'}
         aria-label={isOpen ? 'Close sidebar' : 'Open sidebar'}
         aria-expanded={isOpen}
