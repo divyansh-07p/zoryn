@@ -340,14 +340,14 @@ export const getFallbackData = () => mockData;
 Your backend should provide these endpoints (or similar):
 
 ```
-GET  /api/balance           → { amount: number }
-GET  /api/income            → { amount: number }
-GET  /api/expenses          → { amount: number }
-GET  /api/transactions      → Transaction[]
-GET  /api/portfolio         → PortfolioItem[]
-GET  /api/monthly-data      → MonthlyData[]
-GET  /api/spending-categories → CategorySpending[]
-POST /api/transactions      → { success: boolean, transaction: Transaction }
+GET  /api/balance               → { amount: number }
+GET  /api/income                → { amount: number }
+GET  /api/expenses              → { amount: number }
+GET  /api/transactions          → Transaction[]
+GET  /api/portfolio             → PortfolioItem[]
+GET  /api/monthly-data          → MonthlyData[]
+GET  /api/spending-categories   → CategorySpending[]
+POST /api/transactions          → { success: boolean, transaction: Transaction }
 ```
 
 #### Step 4: Expected Data Formats
@@ -595,9 +595,6 @@ Delays: 0ms, 100ms, 200ms, 300ms (staggered animations)
 - **Node.js**: 18.17.0 or higher
 - **npm**: 9.6.7 or higher
 - **Operating System**: Windows, macOS, Linux
-
----
-
 
 ---
 
